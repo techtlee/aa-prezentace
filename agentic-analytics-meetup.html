@@ -1069,6 +1069,35 @@ section.in .team-ph .ph img{transform:none}
 .team-av .card > .sm{font-size:15px;line-height:1.5;color:var(--fg-2)}
 #menu .menu-cards .card .sm{font-size:15px;color:var(--fg-2)}
 #menu .vision .sm{font-size:16px}
+/* areas of interest: three cards above two */
+#menu .menu-cards{margin-top:30px;grid-template-columns:repeat(6,minmax(0,1fr))}
+#menu .menu-cards .card{grid-column:span 2}
+#menu .menu-cards .card:nth-child(n+4){grid-column:span 3}
+@media(max-width:980px){
+  #menu .menu-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #menu .menu-cards .card,#menu .menu-cards .card:nth-child(n+4){grid-column:auto}
+  #menu .menu-cards .card:last-child{grid-column:1/-1}
+}
+/* fit both rows on short screens (1280x720, 1366x768) */
+@media(max-height:820px) and (min-width:981px){
+  #menu{padding-top:72px;padding-bottom:20px}
+  #menu h2{font-size:40px}
+  #menu .menu-cards{margin-top:18px}
+  #menu .menu-cards .card{padding:16px 22px}
+}
+section.in .d7{transition-delay:.52s}
+.mv-climb{display:flex;gap:16px;padding:10px 12px}
+.cl-tries{flex:1;min-width:0;display:flex;align-items:flex-end;gap:5px}
+.cl-tries i{flex:1;height:var(--h);border-radius:3px 3px 1px 1px;border:1px solid rgba(149,173,216,.55);background:rgba(149,173,216,.35);
+  opacity:0;transform:scaleY(.3);transform-origin:bottom;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
+.cl-tries i.drop{border:1px dashed var(--problem);background:rgba(167,180,204,.12)}
+.cl-tries i.show{opacity:1;transform:none}
+.cl-tries i:last-child{background:var(--accent)}
+.cl-tries i.now{box-shadow:0 0 0 2px rgba(149,173,216,.25),0 0 12px rgba(149,173,216,.6)}
+.cl-note{flex:none;align-self:center;width:128px;margin:0;font-size:11px;line-height:1.5;color:var(--fg-3);white-space:nowrap}
+.cl-note .cl-t,.cl-note b{display:block}
+.cl-note b{font-weight:500;color:var(--accent);min-height:1.5em}
+.cl-note.down b{color:var(--problem)}
 .cover .kick-lg{font-size:20px;gap:14px;color:#DCE4F2}
 .cover .kick-lg i{width:44px}
 /* ---------- meetup: Everest slide ---------- */
@@ -1181,30 +1210,11 @@ section.in .ev-shade{opacity:1}
   </div>
 </section>
 
-<!-- ===================== VISION + MENU ===================== -->
-<section id="menu" data-nav="Vision and what agents do">
+<!-- ===================== AREAS OF INTEREST ===================== -->
+<section id="menu" data-nav="Areas of interest">
   <div class="wrap">
     <p class="kick rv"><i></i><b>What agentic analytics is</b></p>
-    <h2 class="split rv d1 wide">The vision, and where agents already earn their place</h2>
-    <div class="vision rv d2">
-      <div class="vs-text">
-        <span class="tagline">The vision</span>
-        <h3>Instant analysis for anyone in the company, where they need it and how they need it</h3>
-        <p class="sm">The holy grail of self-service analytics, finally within reach.</p>
-      </div>
-      <div class="vs-ex" aria-hidden="true">
-        <div class="vx">
-          <span class="vx-who">Marketing</span>
-          <p class="vx-q">How did Meta ads do against TikTok this month?</p>
-          <div class="vx-bars"><span>Meta</span><i style="--v:78%"></i><b>3.1&times; ROAS</b><span>TikTok</span><i style="--v:52%"></i><b>2.1&times; ROAS</b></div>
-        </div>
-        <div class="vx">
-          <span class="vx-who">CFO</span>
-          <p class="vx-q">Where does the Q4 budget stand?</p>
-          <div class="vx-bud"><i style="--v:71%"></i><b>71&nbsp;% spent &middot; on plan</b></div>
-        </div>
-      </div>
-    </div>
+    <h2 class="split rv d1 wide">Areas of interest</h2>
     <div class="grid g4 menu-cards">
       <div class="card rv d3">
         <span class="tagline">For data engineers</span>
@@ -1239,6 +1249,15 @@ section.in .ev-shade{opacity:1}
         <div class="mviz mv-sched mv-night" aria-hidden="true">
           <div class="wk"><span>sales</span><i></i></div><div class="wk"><span>margin</span><i></i></div><div class="wk"><span>stock</span><i></i></div><div class="wk"><span>churn</span><i></i></div><div class="wk"><span>ads</span><i></i></div>
           <p class="ms-note"><span class="ms-t">checking overnight&hellip;</span><b></b></p>
+        </div>
+      </div>
+      <div class="card on rv d7">
+        <span class="tagline">Self-improving</span>
+        <h3>Hill-climbing agents that auto-optimise agents</h3>
+        <p class="sm">Change a prompt, tool or config, score it on an eval, keep it only if it improves. Repeat.</p>
+        <div class="mviz mv-climb" aria-hidden="true">
+          <div class="cl-tries"><i style="--h:22%" data-c="prompt"></i><i class="drop" style="--h:14%" data-c="tool"></i><i style="--h:34%" data-c="config"></i><i style="--h:46%" data-c="prompt"></i><i class="drop" style="--h:30%" data-c="tool"></i><i style="--h:60%" data-c="config"></i><i class="drop" style="--h:44%" data-c="prompt"></i><i style="--h:78%" data-c="tool"></i><i style="--h:100%" data-c="prompt"></i></div>
+          <p class="cl-note"><span class="cl-t">scoring on the eval&hellip;</span><b></b></p>
         </div>
       </div>
     </div>
@@ -1737,6 +1756,15 @@ section.in .ev-shade{opacity:1}
     const pr = $('.mb-pr', sec), prn = $('.mb-pr b', sec);
     const me = $('.cb.me', sec), ai = $('.cb.ai', sec);
     const wks = $$('.wk', sec), note = $('.ms-note', sec), noteB = $('.ms-note b', sec);
+    const tries = $$('.cl-tries i', sec), clNote = $('.cl-note', sec), clT = $('.cl-t', clNote), clB = $('b', clNote);
+    function showTry(i) {
+      const t = tries[i], drop = t.classList.contains('drop');
+      tries.forEach(x => x.classList.remove('now'));
+      t.classList.add('show', 'now');
+      clNote.classList.toggle('down', drop);
+      clT.textContent = 'try ' + (i + 1) + ' · ' + t.dataset.c + ' change';
+      clB.textContent = drop ? 'score down · dropped' : 'score up · kept';
+    }
     let gen = 0, n = 142;
     async function build(g) {
       pr.classList.remove('go'); void pr.offsetWidth; pr.classList.add('go');
@@ -1763,8 +1791,19 @@ section.in .ev-shade{opacity:1}
       note.classList.add('am'); $('.ms-t', note).textContent = '07:00 · morning report:';
       noteB.textContent = 'margin CZ −6 %, freight costs';
     }
-    if (reduce) { pr.classList.add('go'); me.classList.add('show'); ai.classList.add('show', 'done'); wks.forEach(w => w.classList.add('sent')); return; }
-    whileVisible(sec, () => { gen++; build(gen); chat(gen); sched(gen); }, () => { gen++; });
+    async function climb(g) {
+      tries.forEach(t => t.classList.remove('show', 'now')); clNote.classList.remove('down');
+      clT.textContent = 'scoring on the eval…'; clB.textContent = '';
+      await sleep(1200);
+      for (let i = 0; i < tries.length; i++) {
+        await sleep(750); if (g !== gen) return;
+        showTry(i);
+      }
+      await sleep(700); if (g !== gen) return;
+      tries.forEach(t => t.classList.remove('now'));
+    }
+    if (reduce) { pr.classList.add('go'); me.classList.add('show'); ai.classList.add('show', 'done'); wks.forEach(w => w.classList.add('sent')); tries.forEach((t, i) => showTry(i)); tries.forEach(t => t.classList.remove('now')); return; }
+    whileVisible(sec, () => { gen++; build(gen); chat(gen); sched(gen); climb(gen); }, () => { gen++; });
   })();
 
   /* ======================= 4. value: weeks -> minutes, analyst -> analytics engineer ======================= */
