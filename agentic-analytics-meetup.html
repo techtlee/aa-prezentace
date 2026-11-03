@@ -1158,6 +1158,15 @@ section.in .ev-shade{opacity:1}
 .ev3d canvas{display:block;width:100%;height:min(600px,64vh)}
 .ev3d script{display:none}
 .ev3d canvas{height:min(640px,66vh)}
+/* ---------- closing links: plain link above each QR code ---------- */
+.qr-cards{align-items:stretch}
+.qr-card{display:flex;flex-direction:column;align-items:flex-start}
+.qr-url{display:block;margin:20px 0 14px;color:var(--fg);font-size:clamp(18px,1.9vw,24px);font-weight:var(--fw-medium);
+  letter-spacing:-0.01em;text-decoration:none;overflow-wrap:anywhere;border-bottom:1px solid var(--line-3);padding-bottom:3px}
+.qr-url:hover{color:var(--accent);border-color:var(--accent)}
+.qr{display:block;width:min(clamp(180px,21vw,320px),28vh);aspect-ratio:1;border-radius:12px;background:#fff;overflow:hidden;
+  box-shadow:0 18px 40px -24px rgba(0,0,0,.9)}
+.qr svg{display:block;width:100%;height:100%}
 </style>
 </head>
 <body>
@@ -1276,6 +1285,30 @@ section.in .ev-shade{opacity:1}
       <span>27.9881&deg; N &middot; 86.9250&deg; E</span>
       <span>North face, seen from Rongbuk, 4,980 m &middot; 25 km away</span>
       <span>Drawn from ASTER elevation data</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LINKS ===================== -->
+<section id="links" data-nav="Links">
+  <div class="wrap">
+    <p class="kick rv"><i></i><b>Before you go</b></p>
+    <h2 class="split rv d1 wide">Two links to take home</h2>
+    <div class="grid g2 qr-cards">
+      <div class="card on qr-card rv d2">
+        <span class="tagline">Next meetup &middot; Thursday 10 December</span>
+        <h3>Sign up for the next evening</h3>
+        <p class="sm">Same time, 18:30. A strong line-up is coming.</p>
+        <a class="qr-url" href="https://luma.com/vu9o3dql">luma.com/vu9o3dql</a>
+        <div class="qr" data-url="https://luma.com/vu9o3dql"><svg role="img" aria-label="QR code for the 10 December meetup on Luma" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" class="segno"><path fill="#fff" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0a0c0b" d="M4 4.5h7m1 0h1m1 0h1m1 0h2m4 0h7m-25 1h1m5 0h1m3 0h1m2 0h2m1 0h1m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m1 0h4m1 0h2m3 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m3 0h1m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h1m1 0h1m1 0h1m1 0h1m-17 1h1m1 0h1m3 0h2m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m-24 1h1m2 0h2m3 0h1m1 0h1m1 0h7m1 0h1m1 0h2m-25 1h1m2 0h7m1 0h5m2 0h5m1 0h1m-23 1h1m1 0h1m2 0h3m1 0h1m2 0h4m1 0h3m-22 1h4m2 0h1m1 0h2m2 0h1m3 0h1m1 0h2m4 0h1m-22 1h3m1 0h2m4 0h1m1 0h2m1 0h2m3 0h2m-25 1h2m4 0h1m1 0h5m2 0h1m5 0h2m1 0h1m-23 1h2m3 0h1m1 0h2m3 0h2m1 0h1m1 0h3m-22 1h4m1 0h4m1 0h3m1 0h7m2 0h1m-16 1h1m1 0h1m3 0h1m1 0h1m3 0h1m3 0h1m-25 1h7m1 0h5m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h1m1 0h1m1 0h3m3 0h1m2 0h1m-24 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h6m2 0h1m-24 1h1m1 0h3m1 0h1m3 0h3m3 0h2m2 0h1m1 0h2m-24 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m3 0h1m1 0h3m1 0h2m-25 1h1m5 0h1m9 0h1m2 0h2m-21 1h7m1 0h1m1 0h2m3 0h2m1 0h1m2 0h1m2 0h1"/></svg></div>
+      </div>
+      <div class="card on qr-card rv d3">
+        <span class="tagline">Agent adoption survey</span>
+        <h3>How far are you with agents?</h3>
+        <p class="sm">Rate yourself and your organisation, then see the aggregated results.</p>
+        <a class="qr-url" href="https://survey.agenticanalytics.cz">survey.agenticanalytics.cz</a>
+        <div class="qr" data-url="https://survey.agenticanalytics.cz"><svg role="img" aria-label="QR code for the agent adoption survey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" class="segno"><path fill="#fff" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#0a0c0b" d="M4 4.5h7m1 0h1m1 0h1m1 0h4m1 0h2m3 0h7m-29 1h1m5 0h1m1 0h2m1 0h1m1 0h3m2 0h2m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m3 0h4m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m4 0h1m1 0h2m1 0h1m3 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h3m2 0h1m3 0h3m-21 1h1m2 0h6m1 0h2m1 0h5m3 0h1m2 0h1m1 0h3m-27 1h4m1 0h1m6 0h1m1 0h1m1 0h2m3 0h2m1 0h2m-26 1h1m1 0h4m3 0h1m2 0h2m1 0h2m1 0h1m2 0h1m2 0h1m-26 1h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h4m2 0h3m1 0h2m2 0h1m-29 1h2m1 0h1m2 0h2m5 0h2m4 0h1m2 0h1m5 0h1m-29 1h2m1 0h1m5 0h2m1 0h1m2 0h4m2 0h8m-25 1h3m2 0h2m3 0h2m3 0h1m1 0h1m4 0h1m1 0h1m-29 1h1m2 0h3m1 0h1m3 0h6m1 0h2m1 0h2m1 0h1m1 0h1m1 0h1m-27 1h2m2 0h2m2 0h3m2 0h1m3 0h3m3 0h1m-26 1h1m6 0h1m1 0h1m1 0h2m2 0h1m3 0h2m3 0h1m1 0h2m-28 1h2m2 0h3m1 0h1m2 0h1m1 0h7m4 0h2m2 0h1m-29 1h3m4 0h4m1 0h2m1 0h2m2 0h1m2 0h5m-27 1h2m1 0h1m2 0h8m2 0h2m1 0h9m-20 1h2m3 0h1m1 0h2m3 0h1m3 0h2m-26 1h7m1 0h3m1 0h2m1 0h3m1 0h2m1 0h1m1 0h2m-26 1h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h6m3 0h1m-25 1h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h1m3 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h5m2 0h1m1 0h1m4 0h1m-29 1h1m1 0h3m1 0h1m4 0h2m2 0h1m2 0h1m2 0h1m1 0h2m1 0h3m-29 1h1m5 0h1m2 0h8m5 0h2m1 0h2m1 0h1m-29 1h7m1 0h4m1 0h3m3 0h2m2 0h3"/></svg></div>
+      </div>
     </div>
   </div>
 </section>
