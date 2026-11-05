@@ -1292,6 +1292,17 @@ section.in .ev-shade{opacity:1}
 #cover .mark.bright{animation:brightPulseSoft 10s ease-in-out 2.4s infinite}
 @keyframes brightPulseSoft{0%,100%{opacity:0}50%{opacity:.16}}
 @media(prefers-reduced-motion:reduce){#cover .mark.bright{animation:none!important;opacity:0}}
+
+/* ---------- programme: tonight's running order ---------- */
+.prog{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line-2)}
+.pr-row{display:grid;grid-template-columns:92px minmax(0,1fr) auto;align-items:center;gap:6px 28px;padding:13px 4px;border-bottom:1px solid var(--line-2)}
+.pr-row time{font-size:var(--fs-h3);letter-spacing:var(--ls-h3);font-variant-numeric:tabular-nums;color:var(--fg-3)}
+.pr-talk time{color:var(--accent)}
+.pr-what .sm{margin-top:3px}
+.pr-pause h3{color:var(--fg-2)}
+.pr-len{font-size:var(--fs-label);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--fg-3);padding:4px 12px;border:1px solid var(--line-2);border-radius:var(--r-pill)}
+.pr-talk .pr-len{color:#DCE4F2;border-color:rgba(149,173,216,.42);background:rgba(149,173,216,.1)}
+@media(max-width:700px){.pr-row{grid-template-columns:64px minmax(0,1fr)}.pr-len{grid-column:2;justify-self:start}}
 </style>
 </head>
 <body>
@@ -1311,6 +1322,22 @@ section.in .ev-shade{opacity:1}
   <div class="wrap">
     <p class="kick kick-lg"><i></i>Prague</p>
     <h1 class="split">What AI can actually do with your company&rsquo;s data</h1>
+  </div>
+</section>
+
+<!-- ===================== PROGRAMME ===================== -->
+<section id="programme" data-nav="Tonight">
+  <div class="wrap">
+    <p class="kick rv"><i></i><b>Thursday 5 November</b></p>
+    <h2 class="split rv d1 wide">Tonight&rsquo;s programme</h2>
+    <ol class="prog" aria-label="Running order">
+      <li class="pr-row rv d2"><time>19:00</time><div class="pr-what"><h3>Welcome</h3><p class="sm">Daniel, Josef and Ivan</p></div><span class="pr-len">10 min</span></li>
+      <li class="pr-row pr-talk rv d3"><time>19:10</time><div class="pr-what"><h3>SQL, vectors and AI you can take at its word</h3><p class="sm"><strong>David Becvarik</strong> &middot; Etnetera Core</p></div><span class="pr-len">15 min + 5 Q&amp;A</span></li>
+      <li class="pr-row pr-pause rv d4"><time>19:30</time><div class="pr-what"><h3>Break</h3></div><span class="pr-len">15 min</span></li>
+      <li class="pr-row pr-talk rv d5"><time>19:45</time><div class="pr-what"><h3>Chatting with Data is not easy</h3><p class="sm"><strong>&Scaron;t&ecaron;p&aacute;n Re&scaron;l</strong> &middot; DataBrothers</p></div><span class="pr-len">20 min + 10 Q&amp;A</span></li>
+      <li class="pr-row pr-talk rv d6"><time>20:15</time><div class="pr-what"><h3>Building ML Retrieval &amp; Ranking Solutions from Scratch</h3><p class="sm"><strong>Roman Dusek</strong> &middot; Groupon</p></div><span class="pr-len">15 min + 5 Q&amp;A</span></li>
+      <li class="pr-row pr-pause rv d7"><time>20:35</time><div class="pr-what"><h3>Open discussion and beer</h3></div><span class="pr-len">until 21:30</span></li>
+    </ol>
   </div>
 </section>
 
